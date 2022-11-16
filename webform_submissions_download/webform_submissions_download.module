@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Implements hook_cron().
+ *
+ * Deletes files from submission folder which are more 1 hour old..
+ */
+function ogpvp_webform_submissions_downnload_cron() {
+  $dir_iterator = new RecursiveDirectoryIterator("sites/default/files/submissions");
+  $iterator = new RecursiveIteratorIterator($dir_iterator, RecursiveIteratorIterator::SELF_FIRST);
+
+  foreach ($iterator as $file) {
+
+    //Delete files which are modified older than an hour.
+    if(is_file($file) && ((time() - filemtime($file)) >= 1 * 3600)) {
+      unlink($file);
+      Drupal::logger('cron')->info('test');
+    }
+  }
+}

@@ -1,0 +1,7 @@
+ogpvp_webform_submissions_download.agency_webform_submission_download:
+  path: '/ogpvp-webform-submissions-download/agency-webform-submission-download'
+  defaults:
+    _title: 'Agency webform submission download'
+    _form: 'Drupal\ogpvp_webform_submissions_download\Form\AgencyWebformSubmissionDownload'
+  requirements:
+    _permission: 'access content'

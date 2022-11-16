@@ -1,0 +1,6 @@
+name: OGPVP Webform Submissions
+type: module
+description: Webform submissions.
+package: OGPVP
+core_version_requirement: ^9
+version: '1.0'
